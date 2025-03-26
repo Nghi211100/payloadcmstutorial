@@ -67,7 +67,7 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
                 appearance="link"
                 label={item.label}
                 className={clsx(
-                  'font-bold hover:text-secondary text-primary text-base px-2 relative h-full flex items-center z-0',
+                  'font-semibold hover:text-secondary text-primary text-base px-2 relative h-full flex items-center z-0',
                   'after:-z-10 hover:after:absolute hover:after:-bottom-[1px] hover:after:bg-primary hover:after:w-[11px] hover:after:h-[11px] hover:after:left-1/2 after:-translate-x-1  hover:after:rounded-full',
                 )}
               />
@@ -77,7 +77,7 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
             <span
               key={i}
               className={clsx(
-                'font-bold text-primary px-2 relative h-full flex -z-10 items-center',
+                'font-semibold text-primary px-2 relative h-full flex -z-10 items-center',
                 'after:-z-10 hover:after:absolute hover:after:-bottom-[1px] hover:after:bg-primary hover:after:w-[11px] hover:after:h-[11px] hover:after:left-1/2 after:-translate-x-1  hover:after:rounded-full',
               )}
             >
