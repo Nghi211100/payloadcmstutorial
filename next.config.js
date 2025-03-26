@@ -18,6 +18,14 @@ const nextConfig = {
           protocol: url.protocol.replace(':', ''),
         }
       }),
+      ...(process.env.BLOB_STORE_ID
+        ? [
+            {
+              protocol: 'https',
+              hostname: process.env.BLOB_BASEURL,
+            },
+          ]
+        : []),
     ],
   },
   reactStrictMode: true,

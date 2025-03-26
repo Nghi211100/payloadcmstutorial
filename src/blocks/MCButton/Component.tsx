@@ -3,9 +3,9 @@
 import React from 'react'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
-import cn from 'classnames'
 import { MCButtonBlock as MCButtonType } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
+import clsx from 'clsx'
 
 export const MCButtonBlock: React.FC<MCButtonType> = ({ list }) => {
   const { items, title, link } = list
@@ -20,7 +20,7 @@ export const MCButtonBlock: React.FC<MCButtonType> = ({ list }) => {
           return (
             <div
               key={index}
-              className={cn(
+              className={clsx(
                 'container flex items-center gap-2.5',
                 align?.includes('horizontal') ? 'flex-col' : 'md:flex-row',
                 align === 'content-media' || align === 'horizontal-content-media'
