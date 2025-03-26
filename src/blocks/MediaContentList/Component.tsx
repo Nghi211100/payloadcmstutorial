@@ -3,7 +3,6 @@
 import React from 'react'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
-import cn from 'classnames'
 import { MCListBlock as MCListBlockType } from '@/payload-types'
 import clsx from 'clsx'
 
@@ -34,7 +33,7 @@ export const MediaContentListBlock: React.FC<MCListBlockType> = (props) => {
           return (
             <div
               key={index}
-              className={cn(
+              className={clsx(
                 'flex items-center gap-2',
                 align?.includes('horizontal') ? 'flex-col' : 'md:flex-row',
                 align === 'content-media' || align === 'horizontal-content-media'

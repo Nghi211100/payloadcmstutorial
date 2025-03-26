@@ -3,7 +3,7 @@
 import React from 'react'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
-import cn from 'classnames'
+import clsx from 'clsx'
 import { MediaContentBlock as MediaContentBlockType } from '@/payload-types'
 
 export const MediaContentBlock: React.FC<MediaContentBlockType> = ({ mediaContent }) => {
@@ -11,7 +11,7 @@ export const MediaContentBlock: React.FC<MediaContentBlockType> = ({ mediaConten
 
   return (
     <div
-      className={cn(
+      className={clsx(
         'container flex items-center gap-8',
         align?.includes('horizontal') ? 'flex-col' : 'md:flex-row',
         align === 'content-media' || align === 'horizontal-content-media'

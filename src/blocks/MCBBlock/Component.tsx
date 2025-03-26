@@ -3,16 +3,16 @@
 import React from 'react'
 import { Media } from '@/components/Media'
 import RichText from '@/components/RichText'
-import cn from 'classnames'
 import { MCBBlock as MCBBlockType } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
+import clsx from 'clsx'
 
 export const MCBBlock: React.FC<MCBBlockType> = ({ MCB }) => {
   const { media, item, align } = MCB
 
   return (
     <div
-      className={cn(
+      className={clsx(
         'container flex items-center gap-4',
         align === 'content-media' ? 'flex-row-reverse' : 'flex-row',
       )}

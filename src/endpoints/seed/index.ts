@@ -290,14 +290,12 @@ export const seed = async ({
           {
             link: {
               type: 'custom',
-              label: 'Posts',
               url: '/posts',
             },
           },
           {
             link: {
               type: 'reference',
-              label: 'Contact',
               reference: {
                 relationTo: 'pages',
                 value: contactPage.id,
