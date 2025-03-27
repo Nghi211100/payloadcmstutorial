@@ -37,7 +37,7 @@ export async function Footer() {
             {...linksRow[0]?.link}
           />
         </div>
-        <div className="flex items-center py-4">
+        <div className="flex items-center pt-2 md:py-4 ">
           {linksRow.map(({ link }, i) => (
             <CMSLink
               className="text-white font-bold text-sm first:hidden border-r-2 h-max border-white text-[13px] px-2 last:border-0 first:border-r-0"
