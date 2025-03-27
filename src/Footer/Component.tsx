@@ -30,33 +30,44 @@ export async function Footer() {
       )}
 
       {/* Links Row */}
-      <div className="flex items-center container py-4">
-        {linksRow.map(({ link }, i) => (
+      <div className="flex flex-col md:flex-row md:gap-10 items-center px-4 md:px-6 xl:container py-4">
+        <div>
           <CMSLink
-            className="text-white font-bold text-sm first:pr-12 border-r-2 h-max border-white text-[13px] px-2 last:border-0 first:border-r-0"
-            {...link}
-            key={i}
+            className="text-white font-bold text-sm h-max border-white text-[13px]"
+            {...linksRow[0]?.link}
           />
-        ))}
+        </div>
+        <div className="flex items-center py-4">
+          {linksRow.map(({ link }, i) => (
+            <CMSLink
+              className="text-white font-bold text-sm first:hidden border-r-2 h-max border-white text-[13px] px-2 last:border-0 first:border-r-0"
+              {...link}
+              key={i}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Divider */}
       <div className="border-secondary border-t-2"></div>
 
       {/* Main Footer Content */}
-      <div className="flex justify-between container py-6">
-        <nav className="flex flex-col md:flex-row justify-between gap-4 w-4/6">
+      <div className="lg:flex justify-between px-4 md:px-6 xl:container py-6 space-y-4">
+        <nav className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:w-4/6">
           {navItems.map(({ link, children }, i) => {
             return (
               <div key={i} className="">
                 <div>
-                  <CMSLink className="text-secondary uppercase font-bold text-lg" {...link} />
+                  <CMSLink
+                    className="text-secondary uppercase font-bold text-base md:text-lg"
+                    {...link}
+                  />
                 </div>
                 <div>
                   {children?.map(({ link }, i) => {
                     return (
                       <div key={i}>
-                        <CMSLink className="text-white text-sm" {...link} />
+                        <CMSLink className="text-white text-xs md:text-sm" {...link} />
                       </div>
                     )
                   })}
@@ -67,9 +78,9 @@ export async function Footer() {
         </nav>
 
         {reference?.image && (
-          <div className="custom-field">
+          <div className="flex flex-col w-max">
             {reference.title && (
-              <p className="custom-field-title uppercase text-secondary font-bold text-lg">
+              <p className="uppercase text-secondary font-bold text-base md:text-lg">
                 {reference.title}
               </p>
             )}
@@ -87,8 +98,8 @@ export async function Footer() {
       </div>
 
       {/* Footer Text and Social Links */}
-      <div className="flex justify-between items-center container py-2  text-[13px]">
-        <p className="text-white">{footerText}</p>
+      <div className="flex flex-col md:flex-row gap-2 justify-between items-center container py-2  text-[13px]">
+        <p className="text-white text-center md:text-left">{footerText}</p>
         <div className="flex items-center gap-1">
           <p className="text-white">Find us on: </p>
           {socialLinks.map(({ icon, url }, i) => (

@@ -13,7 +13,7 @@ export const ShortCut: React.FC<{ data: HeaderType }> = ({ data }) => {
 
   return (
     <nav className="flex justify-between">
-      <div className="flex justify-between gap-0.5 items-center ">
+      <div className="flex justify-between gap-0.5 items-center -ml-4 sm:ml-0">
         {navItems.map(({ link, isNew, icon }, i) => {
           return (
             <CMSLink
@@ -21,9 +21,14 @@ export const ShortCut: React.FC<{ data: HeaderType }> = ({ data }) => {
               url={link.url}
               appearance="link"
               className={clsx(
-                'bg-secondary px-3 py-3 relative flex items-center gap-2 w-[135px] uppercase text-xs text-white h-full after:animate-bounce duration-400 after:delay-1000',
+                'bg-gradient-to-b from-[-1%] from-[#ffffff] to-[20%] to-secondary',
+                'border border-gray-300 rounded-lg shadow-lg px-2 py-2 lg:px-3 lg:py-3',
+                'relative flex items-center gap-1',
+                'w-[120px] md:w-[130px] lg:w-[135px] h-full',
+                'uppercase text-[11px] sm:text-xs text-white',
+                'after:animate-bounce duration-400 after:delay-1000',
                 isNew &&
-                  '!bg-[#32b0e2] after:-top-3 after:absolute after:right-0 after:w-[50px] after:h-[30px] after:bg-[url(/images/new.png)] after:bg-no-repeat after:bg-contain after:bg-center',
+                  '!to-primary after:-top-3 after:absolute after:right-0 after:w-[50px] after:h-[30px] after:bg-[url(/images/new.png)] after:bg-no-repeat after:bg-contain after:bg-center',
               )}
             >
               {icon && <Media resource={icon} className="size-6 min-w-6" />}

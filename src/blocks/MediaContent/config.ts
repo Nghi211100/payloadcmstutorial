@@ -3,6 +3,9 @@ import {
   HeadingFeature,
   InlineToolbarFeature,
   lexicalEditor,
+  OrderedListFeature,
+  UnorderedListFeature,
+  ChecklistFeature,
 } from '@payloadcms/richtext-lexical'
 import type { Block } from 'payload'
 
@@ -26,6 +29,9 @@ export const MediaContentBlock: Block = {
                 HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
                 FixedToolbarFeature(),
                 InlineToolbarFeature(),
+                OrderedListFeature(),
+                UnorderedListFeature(),
+                ChecklistFeature(),
               ]
             },
           }),

@@ -36,19 +36,19 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
       className="relative z-10 text-primary border-t-primary border-t-[5px]"
       {...(theme ? { 'data-theme': theme } : {})}
     >
-      <div className="container mx-auto">
+      <div className="px-4 lg:px-6 xl:container mx-auto">
         <div className="pb-4 flex justify-between">
           <Link href="/" className="pt-6">
             <Logo loading="eager" priority="high" className="invert dark:invert-0" />
           </Link>
-          <div className="flex gap-4 items-start">
-            <Link href="/sign-in" className="pt-4 font-bold">
+          <div className="flex sm:gap-4 items-start">
+            <Link href="/sign-in" className="pt-3 sm:pt-[18px] font-bold text-sm sm:text-base">
               Sign In
             </Link>
             <HeaderAction data={data} />
           </div>
         </div>
-        <div className="flex justify-between">
+        <div className="flex sm:flex-row flex-col-reverse justify-between">
           <ShortCut data={data} />
 
           <HeaderNav data={data} />

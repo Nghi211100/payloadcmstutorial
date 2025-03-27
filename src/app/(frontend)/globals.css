@@ -51,6 +51,7 @@
 
 html {
   opacity: 0;
+  font-family: 'Open Sans', Arial;
 }
 
 html[data-theme='dark'],

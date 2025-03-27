@@ -11,9 +11,9 @@ export const MCButtonBlock: React.FC<MCButtonType> = ({ list }) => {
   const { items, title, link } = list
 
   return (
-    <div className="container bg-[#00a7e1] py-6">
-      <p className="text-[40px] text-center pb-6 text-white font-semibold">{title}</p>
-      <div className="grid grid-cols-3 pb-6">
+    <div className="px-4 md:px-6 xl:container bg-[#00a7e1] py-6">
+      <p className="text-center pb-6 text-white font-semibold text-2xl md:text-4xl">{title}</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 pb-6 gap-4 lg:gap-8 xl:gap-12">
         {items?.map((item, index) => {
           const { media, content, align } = item
 
@@ -21,7 +21,7 @@ export const MCButtonBlock: React.FC<MCButtonType> = ({ list }) => {
             <div
               key={index}
               className={clsx(
-                'container flex items-center gap-2.5',
+                'flex items-center gap-2.5',
                 align?.includes('horizontal') ? 'flex-col' : 'md:flex-row',
                 align === 'content-media' || align === 'horizontal-content-media'
                   ? 'flex-row-reverse'
@@ -29,9 +29,10 @@ export const MCButtonBlock: React.FC<MCButtonType> = ({ list }) => {
               )}
             >
               {media && (
-                <div className="">
-                  <Media resource={media} className="w-full h-auto object-contain rounded-xl" />
-                </div>
+                <Media
+                  resource={media}
+                  className="mx-auto w-full object-cover rounded-xl overflow-hidden"
+                />
               )}
               <div className="">
                 <RichText
@@ -43,7 +44,7 @@ export const MCButtonBlock: React.FC<MCButtonType> = ({ list }) => {
           )
         })}
       </div>
-      <div className="px-10 py-3 bg-secondary rounded-xl w-max mx-auto text-white uppercase font-semibold">
+      <div className="px-6 py-2 md:px-10 md:py-3 bg-secondary rounded-xl w-max mx-auto text-white uppercase font-semibold text-sm md:text-base">
         <CMSLink {...link} />
       </div>
     </div>

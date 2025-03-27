@@ -27,8 +27,8 @@ export const HomeHero: React.FC<Page['hero']> = ({
   }, [setHeaderTheme])
 
   return (
-    <div className="container">
-      <div className="relative flex items-center justify-center text-white min-h-[80vh]">
+    <div className="xl:container">
+      <div className="relative flex items-center justify-center text-white max-h-[81.5vh] h-[55.3vw]">
         {media && typeof media === 'object' && (
           <Media
             fill
@@ -39,12 +39,18 @@ export const HomeHero: React.FC<Page['hero']> = ({
         )}
 
         {/* Content */}
-        <div className="container z-10 relative flex flex-col items-center text-center">
-          {richText && <RichText className="mb-6" data={richText} enableGutter={false} />}
+        <div className="container z-0 relative flex flex-col items-center text-center">
+          {richText && (
+            <RichText
+              className="mb-3 xl:prose-h1:text-[80px] prose-h1:text-[6vw]"
+              data={richText}
+              enableGutter={false}
+            />
+          )}
           {Array.isArray(selectLinkBox) && selectLinkBox.length > 0 && (
-            <div className="w-[274px] max-w-xs">
+            <div className="w-[200px] md:w-[240px] lg:w-[300px]">
               <Select>
-                <SelectTrigger className="bg-transparent text-2xl justify-center rounded-3xl p-6 border-neutral-500">
+                <SelectTrigger className="bg-transparent text-base md:text-lg lg:text-2xl justify-center rounded-3xl p-4 lg:p-6 border-neutral-500">
                   <SelectValue placeholder="- Select Location -" />
                 </SelectTrigger>
                 <SelectContent>
@@ -62,8 +68,8 @@ export const HomeHero: React.FC<Page['hero']> = ({
             </div>
           )}
           {buttonText && (
-            <div className="mt-4">
-              <button className="py-2.5 px-12 bg-secondary text-white rounded-xl font-semibold text-sm">
+            <div className="mt-2 lg:mt-4">
+              <button className="lg:py-2.5 py-1.5 px-6 lg:px-12 bg-secondary text-white rounded-xl font-semibold text-sm">
                 {buttonText}
               </button>
             </div>
