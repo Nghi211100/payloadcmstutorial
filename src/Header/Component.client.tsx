@@ -54,7 +54,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
           <HeaderNav data={data} />
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 border-t-secondary border-t-2 h-[4px] bg-white z-0"></div>
+      <div className="absolute bottom-0 left-0 right-0 border-t-secondary border-t-2 bg-white z-0"></div>
     </header>
   )
 }
