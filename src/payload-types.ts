@@ -1983,28 +1983,38 @@ export interface Footer {
     image?: (number | null) | Media;
   };
   /**
-   * Add links to display in a single row.
+   * Configure shortcut links and their display settings.
    */
-  linksRow?:
-    | {
-        link: {
-          type?: ('reference' | 'custom') | null;
-          newTab?: boolean | null;
-          reference?:
-            | ({
-                relationTo: 'pages';
-                value: number | Page;
-              } | null)
-            | ({
-                relationTo: 'posts';
-                value: number | Post;
-              } | null);
-          url?: string | null;
-          label: string;
-        };
-        id?: string | null;
-      }[]
-    | null;
+  shortCutLinks?: {
+    linksRow?:
+      | {
+          link: {
+            type?: ('reference' | 'custom') | null;
+            newTab?: boolean | null;
+            reference?:
+              | ({
+                  relationTo: 'pages';
+                  value: number | Page;
+                } | null)
+              | ({
+                  relationTo: 'posts';
+                  value: number | Post;
+                } | null);
+            url?: string | null;
+            label: string;
+          };
+          id?: string | null;
+        }[]
+      | null;
+    /**
+     * Check the pages where you want to show these links. You can select multiple pages.
+     */
+    showOnPages?: (number | Page)[] | null;
+    /**
+     * Upload a sticker image to display with these links.
+     */
+    sticker?: (number | null) | Media;
+  };
   /**
    * Enter the footer text (e.g., copyright information).
    */
@@ -2133,19 +2143,25 @@ export interface FooterSelect<T extends boolean = true> {
     | {
         image?: T;
       };
-  linksRow?:
+  shortCutLinks?:
     | T
     | {
-        link?:
+        linksRow?:
           | T
           | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
-              label?: T;
+              link?:
+                | T
+                | {
+                    type?: T;
+                    newTab?: T;
+                    reference?: T;
+                    url?: T;
+                    label?: T;
+                  };
+              id?: T;
             };
-        id?: T;
+        showOnPages?: T;
+        sticker?: T;
       };
   footerText?: T;
   socialLinks?:

@@ -1,10 +1,14 @@
 import type { Field } from 'payload'
 
 import {
+  AlignFeature,
   FixedToolbarFeature,
   HeadingFeature,
   InlineToolbarFeature,
   lexicalEditor,
+  LinkFeature,
+  OrderedListFeature,
+  UnorderedListFeature,
 } from '@payloadcms/richtext-lexical'
 
 import { link } from '@/fields/link'
@@ -52,6 +56,10 @@ export const hero: Field = {
             HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
             FixedToolbarFeature(),
             InlineToolbarFeature(),
+            AlignFeature(),
+            OrderedListFeature(),
+            UnorderedListFeature(),
+            LinkFeature(),
           ]
         },
       }),
@@ -68,6 +76,7 @@ export const hero: Field = {
       admin: {
         condition: (_, { type } = {}) => ['homeHero'].includes(type),
       },
+      required: false,
     },
     {
       name: 'media',
@@ -76,7 +85,7 @@ export const hero: Field = {
         condition: (_, { type } = {}) => ['highImpact', 'mediumImpact', 'homeHero'].includes(type),
       },
       relationTo: 'media',
-      required: true,
+      required: false,
     },
     {
       name: 'buttonText',
@@ -85,6 +94,7 @@ export const hero: Field = {
         condition: (_, { type } = {}) => ['highImpact', 'mediumImpact', 'homeHero'].includes(type),
         description: 'Enter the button text here.',
       },
+      required: false,
     },
     {
       name: 'banner',
@@ -93,7 +103,7 @@ export const hero: Field = {
         condition: (_, { type } = {}) => ['homeHero'].includes(type),
       },
       relationTo: 'media',
-      required: true,
+      required: false,
     },
   ],
   label: false,

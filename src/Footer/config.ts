@@ -80,16 +80,42 @@ export const Footer: GlobalConfig = {
       },
     },
     {
-      name: 'linksRow',
-      type: 'array',
-      fields: [
-        link({
-          appearances: false,
-        }),
-      ],
+      type: 'group',
+      name: 'shortCutLinks',
+      label: 'Shortcut Links',
       admin: {
-        description: 'Add links to display in a single row.',
+        description: 'Configure shortcut links and their display settings.',
       },
+      fields: [
+        {
+          label: ' ',
+          name: 'linksRow',
+          type: 'array',
+          fields: [
+            link({
+              appearances: false,
+            }),
+          ],
+        },
+        {
+          name: 'showOnPages',
+          type: 'relationship',
+          relationTo: 'pages',
+          hasMany: true,
+          admin: {
+            description:
+              'Check the pages where you want to show these links. You can select multiple pages.',
+          },
+        },
+        {
+          name: 'sticker',
+          type: 'upload',
+          relationTo: 'media',
+          admin: {
+            description: 'Upload a sticker image to display with these links.',
+          },
+        },
+      ],
     },
     {
       name: 'footerText',

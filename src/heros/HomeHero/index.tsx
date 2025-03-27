@@ -12,6 +12,7 @@ import {
   SelectItem,
   SelectValue,
 } from '@/components/ui/select'
+import clsx from 'clsx'
 
 export const HomeHero: React.FC<Page['hero']> = ({
   banner,
@@ -27,8 +28,13 @@ export const HomeHero: React.FC<Page['hero']> = ({
   }, [setHeaderTheme])
 
   return (
-    <div className="xl:container">
-      <div className="relative flex items-center justify-center text-white max-h-[81.5vh] h-[55.3vw]">
+    <div className={clsx(!media ? 'bg-primary' : 'xl:container')}>
+      <div
+        className={clsx(
+          'relative flex items-center justify-center text-white',
+          media && 'max-h-[81.5vh] h-[55.3vw]',
+        )}
+      >
         {media && typeof media === 'object' && (
           <Media
             fill
@@ -39,10 +45,10 @@ export const HomeHero: React.FC<Page['hero']> = ({
         )}
 
         {/* Content */}
-        <div className="container z-0 relative flex flex-col items-center text-center">
+        <div className={'container z-0 relative flex flex-col items-center'}>
           {richText && (
             <RichText
-              className="mb-3 xl:prose-h1:text-[80px] prose-h1:text-[6vw]"
+              className="mb-3 xl:prose-h1:text-[80px] prose-h1:text-[6vw] lg:prose-h2:text-[40px] prose-h2:text-[3vw] prose-h2:mt-3"
               data={richText}
               enableGutter={false}
             />
@@ -77,9 +83,7 @@ export const HomeHero: React.FC<Page['hero']> = ({
         </div>
       </div>
       {/* Banner */}
-      <div>
-        <Media resource={banner} priority className="-z-10 object-cover w-full h-full" />
-      </div>
+      {banner && <Media resource={banner} priority className="-z-10 object-cover w-full h-full" />}
     </div>
   )
 }
