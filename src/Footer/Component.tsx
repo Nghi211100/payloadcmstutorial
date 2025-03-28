@@ -17,7 +17,7 @@ export async function Footer() {
   const sticker = footerData?.sticker
 
   return (
-    <footer className="mt-auto bg-primary text-white ">
+    <footer className="mt-auto bg-primary text-white">
       {/* Sticker */}
       {sticker?.image && typeof sticker.image !== 'number' && sticker.image?.url && (
         <div className="flex justify-center items-center py-1 md:py-4 bg-white relative">
@@ -32,7 +32,7 @@ export async function Footer() {
       <div className="border-secondary border-t-2"></div>
 
       {/* Main Footer Content */}
-      <div className="lg:flex justify-between px-2.5 md:px-6 py-6 space-y-4 w-full">
+      <div className="lg:flex justify-between px-2.5 md:px-6 py-6 space-y-4 w-full container-custom">
         <nav className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full xl:w-4/6">
           {navItems.map(({ link, children }, i) => {
             return (
@@ -78,7 +78,7 @@ export async function Footer() {
       </div>
 
       {/* Footer Text and Social Links */}
-      <div className="flex flex-col md:flex-row gap-2 justify-between items-center container py-2 px-2.5 text-[13px]">
+      <div className="flex flex-col md:flex-row gap-2 justify-between items-center py-2 px-2.5 text-[13px]  container-custom">
         <p className="text-white text-left tracking-wider font-normal">{footerText}</p>
         <div className="flex items-center gap-1">
           <p className="text-white">Find us on: </p>

@@ -14,8 +14,8 @@ const ShortCutLinks = ({ shortCutLinks }: { shortCutLinks: Footer['shortCutLinks
 
   if (showOnPages.some((page) => pathname.includes(page.slug as string) || pathname === '/')) {
     return (
-      <div className="relative">
-        <div className="flex flex-col md:flex-row md:gap-10 items-center px-4 md:px-6 container py-4 md:py-0">
+      <div className="relative  container-custom">
+        <div className="flex flex-col md:flex-row md:gap-10 items-center px-4 md:px-0 container py-4 md:py-0">
           <div>
             <CMSLink
               className="text-white font-bold text-sm h-max border-white text-[13px]"
