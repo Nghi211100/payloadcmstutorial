@@ -13,7 +13,7 @@ export const MCBBlock: React.FC<MCBBlockType> = ({ MCB }) => {
   return (
     <div
       className={clsx(
-        'px-4 md:px-0 container-custom flex flex-col md:flex-row items-center gap-4',
+        'container-custom flex flex-col md:flex-row items-center gap-4 pb-6 md:pb-0',
         align === 'content-media' ? 'flex-row-reverse' : 'flex-row',
       )}
     >
@@ -22,7 +22,7 @@ export const MCBBlock: React.FC<MCBBlockType> = ({ MCB }) => {
           <Media resource={media} className="w-full h-auto object-cover" />
         </div>
       )}
-      <div className="md:w-1/3">
+      <div className="md:w-1/3 px-2.5 md:px-0">
         <RichText
           data={item.content}
           className={clsx(

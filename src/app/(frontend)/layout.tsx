@@ -19,6 +19,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
         <link href="/favicon.ico" rel="icon" type="image/svg+xml" />
+        <link
+          href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&amp;display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body>
         <Providers>

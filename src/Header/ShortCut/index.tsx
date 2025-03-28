@@ -12,7 +12,7 @@ export const ShortCut: React.FC<{ data: HeaderType }> = ({ data }) => {
   const navItems = data?.shortCuts || []
 
   return (
-    <nav className="flex justify-between">
+    <nav className="flex justify-between h-[54px]">
       <div className="flex justify-between gap-[1px] items-center -ml-4 sm:ml-0">
         {navItems.map(({ link, isNew, icon }, i) => {
           return (
@@ -32,13 +32,17 @@ export const ShortCut: React.FC<{ data: HeaderType }> = ({ data }) => {
               <span
                 className={clsx(
                   'bg-[url(/images/tab-orange-l.png)] bg-no-repeat',
-                  'w-[130px] lg:w-[135px] xl:w-[145px] lg:h-[54px]',
-                  ' px-2 py-2 lg:px-3 lg:py-3',
+                  'w-[120px] md:w-[130px] lg:w-[135px] xl:w-[145px] lg:h-[54px]',
+                  'px-1.5 md:px-2 py-2.5 lg:px-3 lg:py-3',
                   'flex items-center gap-1',
                   isNew && '!bg-[url(/images/tab-lblue-l.png)]',
                 )}
               >
-                {icon && <Media resource={icon} className="size-[31px] min-w-[31px]" />}
+                {icon && (
+                  <div className="w-[24%] pt-[3px] pr-[1px] md:pr-0 md:pt-0 md:size-[31px]">
+                    <Media resource={icon} className="size-full" />
+                  </div>
+                )}
                 <p className=" text-white text-pretty font-bold">
                   {link.label.split(' ').map((word, index) => (
                     <React.Fragment key={index}>

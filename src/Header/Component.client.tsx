@@ -33,16 +33,19 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
 
   return (
     <header
-      className=" pl-0 md:pl-10 xl:pl-0 pr-3 z-10 text-primary border-t-primary border-t-[5px] sticky top-0 bg-white"
+      className=" pl-0 md:pl-10 xl:pl-0 pr-3 md:pr-0 z-10 text-primary border-t-primary border-t-[5px] sticky top-0 bg-white h-[164px]"
       {...(theme ? { 'data-theme': theme } : {})}
     >
-      <div className="px-4 md:px-0 container-custom">
-        <div className="pb-4 flex justify-between">
-          <Link href="/" className="pt-6">
+      <div className="pl-4 md:px-0 container-custom">
+        <div className="pl-1 pb-[29px] md:pb-5 flex justify-between">
+          <Link href="/" className="pt-5">
             <Logo loading="eager" priority="high" className="invert dark:invert-0" />
           </Link>
-          <div className="flex sm:gap-4 items-start">
-            <Link href="/sign-in" className="pt-3 sm:pt-[18px] font-bold text-sm sm:text-base">
+          <div className="flex sm:gap-[11px] items-start">
+            <Link
+              href="/sign-in"
+              className="pt-3 sm:pt-[15px] font-bold text-sm sm:text-base hidden sm:block"
+            >
               Sign In
             </Link>
             <HeaderAction data={data} />
