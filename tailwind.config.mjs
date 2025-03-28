@@ -137,6 +137,7 @@ const config = {
         },
       }),
       screens: {
+        xs: '410px',
         sm: '568px',
       },
     },

@@ -32,8 +32,8 @@ export async function Footer() {
       <div className="border-secondary border-t-2"></div>
 
       {/* Main Footer Content */}
-      <div className="lg:flex justify-between px-2.5 md:px-6 py-6 space-y-4 w-full container-custom">
-        <nav className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full xl:w-4/6">
+      <div className="lg:flex justify-between px-2.5 xs:px-5 py-5 space-y-4 w-full container-custom">
+        <nav className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-4 w-full xl:w-4/6">
           {navItems.map(({ link, children }, i) => {
             return (
               <div key={i} className="space-y-3">
@@ -58,29 +58,32 @@ export async function Footer() {
         </nav>
 
         {reference?.image && (
-          <div className="flex flex-col w-max space-y-2">
-            {reference.title && (
-              <p className="uppercase text-secondary font-bold text-base md:text-lg">
-                {reference.title}
-              </p>
-            )}
-            {typeof reference.image !== 'number' && reference.image?.url && (
-              <Image
-                src={reference.image.url}
-                alt={reference.title || 'Custom Field'}
-                width={200} // Adjust width as needed
-                height={46} // Adjust height as needed
-                className="custom-field-image w-[200px] h-auto"
-              />
-            )}
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-1 gap-4 w-full mt-0 xs:!-mt-10">
+            <div></div>
+            <div className="space-y-2">
+              {reference.title && (
+                <p className="uppercase text-secondary font-bold text-base md:text-lg">
+                  {reference.title}
+                </p>
+              )}
+              {typeof reference.image !== 'number' && reference.image?.url && (
+                <Image
+                  src={reference.image.url}
+                  alt={reference.title || 'Custom Field'}
+                  width={200} // Adjust width as needed
+                  height={46} // Adjust height as needed
+                  className="custom-field-image w-[200px] h-auto"
+                />
+              )}
+            </div>
           </div>
         )}
       </div>
 
       {/* Footer Text and Social Links */}
-      <div className="flex flex-col md:flex-row gap-2 justify-between items-center py-2 px-2.5 text-[13px]  container-custom">
-        <p className="text-white text-left tracking-wider font-normal">{footerText}</p>
-        <div className="flex items-center gap-1">
+      <div className="flex flex-col md:flex-row gap-2 justify-between md:items-center py-2 px-2.5 xs:px-5 text-[13px]  container-custom">
+        <p className="text-white tracking-wider font-normal">{footerText}</p>
+        <div className="flex gap-1">
           <p className="text-white">Find us on: </p>
           {socialLinks.map(({ icon, url }, i) => (
             <a

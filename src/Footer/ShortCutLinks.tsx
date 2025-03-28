@@ -16,7 +16,7 @@ const ShortCutLinks = ({ shortCutLinks }: { shortCutLinks: Footer['shortCutLinks
     return (
       <div className="relative">
         <div className=" container-custom">
-          <div className="flex flex-col md:flex-row md:gap-10 items-center px-4 md:px-0 container py-4 md:py-0">
+          <div className="flex flex-col md:flex-row md:gap-10 items-center px-4 xs:px-5 xl:px-0 container py-4 md:py-0">
             <div>
               <CMSLink
                 className="text-white font-bold text-sm h-max border-white text-[13px]"
