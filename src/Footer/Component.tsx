@@ -58,7 +58,7 @@ export async function Footer() {
         </nav>
 
         {reference?.image && (
-          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-1 gap-4 w-full mt-0 xs:!-mt-10">
+          <div className="grid xs:grid-cols-2 md:block gap-4 w-full md:w-max mt-0 xs:!-mt-10 md:!mt-0">
             <div></div>
             <div className="space-y-2">
               {reference.title && (
