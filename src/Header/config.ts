@@ -91,9 +91,6 @@ export const Header: GlobalConfig = {
       ],
       admin: {
         initCollapsed: true,
-        components: {
-          RowLabel: '@/Header/RowLeftLabel#RowLeftLabel',
-        },
       },
     },
     {
