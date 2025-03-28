@@ -16,7 +16,7 @@ export const MediaContentListBlock: React.FC<MCListBlockType> = (props) => {
   const { items, title, gridCols } = props.list
 
   return (
-    <div className="px-4 md:px-6 xl:container">
+    <div className="px-4 md:px-0 container-custom">
       <RichText
         data={title}
         className="text-primary prose-h1:font-semibold prose-h1:text-[40px] pb-6 prose-h1:text-xl sm:prose-h1:text-2xl lg:prose-h1:text-[40px]"

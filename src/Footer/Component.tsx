@@ -20,8 +20,8 @@ export async function Footer() {
     <footer className="mt-auto bg-primary text-white ">
       {/* Sticker */}
       {sticker?.image && typeof sticker.image !== 'number' && sticker.image?.url && (
-        <div className="flex justify-center items-center py-2 md:py-4 bg-white relative">
-          <Media resource={sticker.image} className="w-[250px] sm:w-[400px] h-auto" />
+        <div className="flex justify-center items-center py-1 md:py-4 bg-white relative">
+          <Media resource={sticker.image} className="w-[200px] sm:w-[400px] h-auto" />
         </div>
       )}
 
@@ -32,18 +32,18 @@ export async function Footer() {
       <div className="border-secondary border-t-2"></div>
 
       {/* Main Footer Content */}
-      <div className="lg:flex justify-between px-4 md:px-6 xl:container py-6 space-y-4">
-        <nav className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:w-4/6">
+      <div className="lg:flex justify-between px-2.5 md:px-6 py-6 space-y-4 w-full">
+        <nav className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full xl:w-4/6">
           {navItems.map(({ link, children }, i) => {
             return (
-              <div key={i} className="">
+              <div key={i} className="space-y-3">
                 <div>
                   <CMSLink
                     className="text-secondary uppercase font-bold text-base md:text-lg"
                     {...link}
                   />
                 </div>
-                <div>
+                <div className="-space-y-1">
                   {children?.map(({ link }, i) => {
                     return (
                       <div key={i}>
@@ -58,7 +58,7 @@ export async function Footer() {
         </nav>
 
         {reference?.image && (
-          <div className="flex flex-col w-max">
+          <div className="flex flex-col w-max space-y-2">
             {reference.title && (
               <p className="uppercase text-secondary font-bold text-base md:text-lg">
                 {reference.title}
@@ -78,8 +78,8 @@ export async function Footer() {
       </div>
 
       {/* Footer Text and Social Links */}
-      <div className="flex flex-col md:flex-row gap-2 justify-between items-center container py-2  text-[13px]">
-        <p className="text-white text-center md:text-left">{footerText}</p>
+      <div className="flex flex-col md:flex-row gap-2 justify-between items-center container py-2 px-2.5 text-[13px]">
+        <p className="text-white text-left tracking-wider font-normal">{footerText}</p>
         <div className="flex items-center gap-1">
           <p className="text-white">Find us on: </p>
           {socialLinks.map(({ icon, url }, i) => (

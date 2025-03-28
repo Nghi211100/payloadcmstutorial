@@ -13,7 +13,7 @@ export const ShortCut: React.FC<{ data: HeaderType }> = ({ data }) => {
 
   return (
     <nav className="flex justify-between">
-      <div className="flex justify-between gap-0.5 items-center -ml-4 sm:ml-0">
+      <div className="flex justify-between gap-[1px] items-center -ml-4 sm:ml-0">
         {navItems.map(({ link, isNew, icon }, i) => {
           return (
             <CMSLink
@@ -21,18 +21,33 @@ export const ShortCut: React.FC<{ data: HeaderType }> = ({ data }) => {
               url={link.url}
               appearance="link"
               className={clsx(
-                'bg-gradient-to-b from-[-1%] from-[#ffffff] to-[20%] to-secondary',
-                'border border-gray-300 rounded-lg shadow-lg px-2 py-2 lg:px-3 lg:py-3',
-                'relative flex items-center gap-1',
-                'w-[120px] md:w-[130px] lg:w-[135px] h-full',
+                'bg-[url(/images/tab-orange-r.png)] bg-no-repeat bg-right-top',
+                'relative',
                 'uppercase text-[11px] sm:text-xs text-white',
                 'after:animate-bounce duration-400 after:delay-1000',
                 isNew &&
-                  '!to-primary after:-top-3 after:absolute after:right-0 after:w-[50px] after:h-[30px] after:bg-[url(/images/new.png)] after:bg-no-repeat after:bg-contain after:bg-center',
+                  '!bg-[url(/images/tab-lblue-r.png)] after:z-10 after:-top-3 after:absolute after:-right-[5px] after:w-[50px] after:h-[30px] after:bg-[url(/images/new.png)] after:bg-no-repeat after:bg-contain after:bg-center',
               )}
             >
-              {icon && <Media resource={icon} className="size-6 min-w-6" />}
-              <p className=" text-white text-pretty">{link.label}</p>
+              <span
+                className={clsx(
+                  'bg-[url(/images/tab-orange-l.png)] bg-no-repeat',
+                  'w-[130px] lg:w-[135px] xl:w-[145px] lg:h-[54px]',
+                  ' px-2 py-2 lg:px-3 lg:py-3',
+                  'flex items-center gap-1',
+                  isNew && '!bg-[url(/images/tab-lblue-l.png)]',
+                )}
+              >
+                {icon && <Media resource={icon} className="size-[31px] min-w-[31px]" />}
+                <p className=" text-white text-pretty font-bold">
+                  {link.label.split(' ').map((word, index) => (
+                    <React.Fragment key={index}>
+                      {word}
+                      {index === 0 && <br />}
+                    </React.Fragment>
+                  ))}
+                </p>
+              </span>
             </CMSLink>
           )
         })}

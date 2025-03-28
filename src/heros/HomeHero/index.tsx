@@ -28,7 +28,7 @@ export const HomeHero: React.FC<Page['hero']> = ({
   }, [setHeaderTheme])
 
   return (
-    <div className={clsx(!media ? 'bg-primary' : 'xl:container')}>
+    <div className={clsx(!media ? 'bg-primary' : 'container-custom')}>
       <div
         className={clsx(
           'relative flex items-center justify-center text-white',

@@ -12,10 +12,10 @@ const ShortCutLinks = ({ shortCutLinks }: { shortCutLinks: Footer['shortCutLinks
   const sticker = shortCutLinks?.sticker
   const showOnPages = shortCutLinks?.showOnPages as Page[]
 
-  if (showOnPages.some((page) => pathname.includes(page.slug as string))) {
+  if (showOnPages.some((page) => pathname.includes(page.slug as string) || pathname === '/')) {
     return (
       <div className="relative">
-        <div className="flex flex-col md:flex-row md:gap-10 items-center px-4 md:px-6 xl:container py-4 md:py-0">
+        <div className="flex flex-col md:flex-row md:gap-10 items-center px-4 md:px-6 container py-4 md:py-0">
           <div>
             <CMSLink
               className="text-white font-bold text-sm h-max border-white text-[13px]"
@@ -33,7 +33,7 @@ const ShortCutLinks = ({ shortCutLinks }: { shortCutLinks: Footer['shortCutLinks
           </div>
         </div>
         <div className="absolute bottom-full left-1">
-          <Media resource={sticker} className="w-[calc(20vw)] max-w-[200px] h-auto" />
+          <Media resource={sticker} className="w-[13vw] max-w-[200px] h-auto" />
         </div>
       </div>
     )

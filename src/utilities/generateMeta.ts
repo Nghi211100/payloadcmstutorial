@@ -27,8 +27,9 @@ export const generateMeta = async (args: {
   const ogImage = getImageURL(doc?.meta?.image)
 
   const title = doc?.meta?.title
-    ? doc?.meta?.title + ' | Payload Website Template'
-    : 'Payload Website Template'
+    ? doc?.meta?.title +
+      ' | StorHub Self Storage Australia | Rouse Hill, Forestville, Homebush, Revesby'
+    : 'StorHub Self Storage Australia | Rouse Hill, Forestville, Homebush, Revesby'
 
   return {
     description: doc?.meta?.description,

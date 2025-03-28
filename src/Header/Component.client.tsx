@@ -33,10 +33,10 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
 
   return (
     <header
-      className="relative z-10 text-primary border-t-primary border-t-[5px]"
+      className=" pl-0 md:pl-10 xl:pl-0 pr-3 z-10 text-primary border-t-primary border-t-[5px] sticky top-0 bg-white"
       {...(theme ? { 'data-theme': theme } : {})}
     >
-      <div className="px-4 lg:px-6 xl:container mx-auto">
+      <div className="px-4 md:px-0 container-custom">
         <div className="pb-4 flex justify-between">
           <Link href="/" className="pt-6">
             <Logo loading="eager" priority="high" className="invert dark:invert-0" />
@@ -54,7 +54,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
           <HeaderNav data={data} />
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 border-t-secondary border-t-2 bg-white z-0"></div>
+      <div className="absolute bottom-0 left-0 right-0 border-t-secondary border-t-2 bg-white -z-10"></div>
     </header>
   )
 }

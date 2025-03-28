@@ -12,7 +12,7 @@ export const MediaContentBlock: React.FC<MediaContentBlockType> = ({ mediaConten
   return (
     <div
       className={clsx(
-        'mx-4 md:mx-6 lg:mx-auto lg:container flex items-center gap-4 md:gap-6 lg:gap-8',
+        'mx-4 md:mx-0 px-0 md:px-10 xl:px-0 container-custom flex items-start gap-4 md:gap-6 lg:gap-8',
         align?.includes('horizontal') ? 'flex-col' : 'flex-col md:flex-row',
         align === 'content-media' || align === 'horizontal-content-media'
           ? 'flex-row-reverse'

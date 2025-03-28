@@ -9,8 +9,8 @@ const defaultOpenGraph: Metadata['openGraph'] = {
       url: `${getServerSideURL()}/website-template-OG.webp`,
     },
   ],
-  siteName: 'Payload Website Template',
-  title: 'Payload Website Template',
+  siteName: 'StorHub Self Storage Australia | Rouse Hill, Forestville, Homebush, Revesby',
+  title: 'StorHub Self Storage Australia | Rouse Hill, Forestville, Homebush, Revesby',
 }
 
 export const mergeOpenGraph = (og?: Metadata['openGraph']): Metadata['openGraph'] => {

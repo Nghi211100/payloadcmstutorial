@@ -13,7 +13,7 @@ export const MCBBlock: React.FC<MCBBlockType> = ({ MCB }) => {
   return (
     <div
       className={clsx(
-        'px-4 md:px-6 xl:container flex flex-col md:flex-row items-center gap-4',
+        'px-4 md:px-0 container-custom flex flex-col md:flex-row items-center gap-4',
         align === 'content-media' ? 'flex-row-reverse' : 'flex-row',
       )}
     >
